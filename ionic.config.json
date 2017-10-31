@@ -2,5 +2,7 @@
   "name": "iPage",
   "app_id": "a07f9ac7",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
