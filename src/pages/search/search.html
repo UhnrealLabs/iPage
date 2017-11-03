@@ -5,9 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <span>You are searching for: {{query}}</span>
-  <div *ngFor="let book of books" (tap)="addBook(book)">
-    <h3>{{book.volumeInfo.title}}</h3>
-    <p>{{book.volumeInfo.description ? book.volumeInfo.description.substring(0, 35) : 'Click here to learn more'}}...</p>
+  <span class="blobber">You are searching for {{query}}</span>
+  <div class="image-gallery">
+    <div *ngFor="let book of books" (tap)="addBook(book)" class="book">
+      <img src="{{book.volumeInfo.imageLinks.thumbnail}}"/>
+      <div class="book-footer">
+          <b>{{book.volumeInfo.title}}</b>
+          <p>{{book.volumeInfo.description ? book.volumeInfo.description.substring(0, 35) : 'Click here to learn more'}}...</p>
+      </div>
+    </div>
   </div>
 </ion-content>

@@ -86,3 +86,12 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: 'Abel';
+  src: url($font-path + '/Abel-Regular.ttf');
+}
+
+* {
+  font-family: 'Abel';
+}

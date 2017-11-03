@@ -1,3 +1,39 @@
 page-contact {
 
 }
+
+.blobber {
+  display: inline-block;
+  margin: 5px auto;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: #333;
+  color: #efefef;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.book {
+  background-color: #efefef;
+  flex-basis: 140px;
+  margin: 10px 2px;
+  .book-footer {
+    padding: 5px 10px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.book-footer {
+
+}
