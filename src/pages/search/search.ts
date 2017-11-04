@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { AddBookPage } from '../addbook/addbook';
 
 import 'rxjs/add/operator/toPromise'
 
@@ -31,12 +32,15 @@ export class SearchPage {
   }
 
   addBook(book) {
-    this.storage.get('books').then((books) => {
+    /*this.storage.get('books').then((books) => {
       if (books === null) {
         books = []
       }
       books.push(book)
       this.storage.set('books', books)
+    })*/
+    this.navCtrl.push(AddBookPage, {
+      book_object: book
     })
   }
 
