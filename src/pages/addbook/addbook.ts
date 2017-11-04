@@ -8,9 +8,8 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'addbook.html'
 })
 export class AddBookPage {
-
+  book = {};
   constructor(public navCtrl: NavController, private nav: NavParams, private storage: Storage) {
-    console.log(this.nav.get('book_object'));
+    this.book = this.nav.get('book_object');
   }
-
 }

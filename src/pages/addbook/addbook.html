@@ -4,5 +4,11 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-
+    <div class="book-info">
+        <b>{{book.volumeInfo.title}}</b>
+        <p>{{book.volumeInfo.description}}</p>
+        <div>
+            <button ion-button round style="margin: 0 auto; display: block;">Add to Library</button>            
+        </div>
+    </div>
 </ion-content>

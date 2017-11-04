@@ -7,7 +7,7 @@
 <ion-content>
   <div class="image-gallery">
     <div *ngFor="let book of books" (tap)="addBook(book)" class="book">
-      <img src="{{(book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : '')}}"/>
+      <img src="{{book.volumeInfo.imageLinks.thumbnail}}"/>
       <div class="book-footer">
           <b>{{book.volumeInfo.title}}</b>
           <p>{{book.volumeInfo.description ? book.volumeInfo.description.substring(0, 35) : 'Click here to learn more'}}...</p>
