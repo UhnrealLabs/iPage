@@ -8,7 +8,7 @@
         <b>{{book.volumeInfo.title}}</b>
         <p>{{book.volumeInfo.description}}</p>
         <div>
-            <button ion-button round style="margin: 0 auto; display: block;">Add to Library</button>            
+            <button ion-button round style="margin: 0 auto; display: block;" (tap)="addBook ()" >Add to Library</button>            
         </div>
     </div>
 </ion-content>

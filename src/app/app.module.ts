@@ -13,7 +13,7 @@ import { AddBookPage } from '../pages/addbook/addbook';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { StorageService } from '../_services/storage.service';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,6 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

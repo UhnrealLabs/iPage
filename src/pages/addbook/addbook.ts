@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Storage } from '@ionic/storage';
+import { StorageService } from '../../_services/storage.service';
 
 @Component({
   selector: 'page-addbook',
@@ -9,7 +9,10 @@ import { Storage } from '@ionic/storage';
 })
 export class AddBookPage {
   book = {};
-  constructor(public navCtrl: NavController, private nav: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, private nav: NavParams, private storage: StorageService) {
     this.book = this.nav.get('book_object');
+  }
+  addBook () {
+    this.storage.addBook(this.book);
   }
 }
