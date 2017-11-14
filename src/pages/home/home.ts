@@ -18,7 +18,6 @@ export class HomePage implements OnInit {
   }
 
   constructor(public navCtrl: NavController, private storage: Storage) {
-
+  
   }
-
 }

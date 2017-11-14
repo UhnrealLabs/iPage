@@ -14,6 +14,7 @@ import { AddBookPage } from '../pages/addbook/addbook';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StorageService } from '../_services/storage.service';
+import { IndivBookPage} from '../pages/indivbook/indivbook';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +22,8 @@ import { StorageService } from '../_services/storage.service';
     SearchPage,
     HomePage,
     TabsPage,
-    AddBookPage
+    AddBookPage,
+    IndivBookPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { StorageService } from '../_services/storage.service';
     SearchPage,
     HomePage,
     TabsPage,
-    AddBookPage
+    AddBookPage,
+    IndivBookPage
   ],
   providers: [
     StatusBar,

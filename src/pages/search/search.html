@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="image-gallery">
-    <div *ngFor="let book of books" (tap)="addBook(book)" class="book">
+    <div *ngFor="let book of books" (tap)="openAddbookPage(book)" class="book">
       <pre>{{book}}</pre>
       <img src="{{ (book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'http://via.placeholder.com/300x452') }}"/>
       <div class="book-footer">

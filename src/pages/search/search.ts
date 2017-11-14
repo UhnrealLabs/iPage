@@ -30,19 +30,18 @@ export class SearchPage {
         // Title: item.volumeInfo.title
       })
   }
-
-  addBook(book) {
-    /*this.storage.get('books').then((books) => {
+ /* this.storage.get('books').then((books) => {
       if (books === null) {
         books = []
       }
       books.push(book)
-      this.storage.set('books', books)
-    })*/
+
+      this.storage.set('books', books)*/
+  openAddbookPage(book) {
     this.navCtrl.push(AddBookPage, {
       book_object: book
     })
-  }
+    }
 
   constructor(public navCtrl: NavController, private http: Http, private storage: Storage) {
 
