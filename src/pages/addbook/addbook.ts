@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { StorageService } from '../../_services/storage.service';
 import { NgFor } from '@angular/common/src/directives';
+import { ShowWhen } from 'ionic-angular/components/show-hide-when/show-when';
 
 @Component({
   selector: 'page-addbook',
@@ -15,5 +16,10 @@ export class AddBookPage {
   }
   addBook () {
     this.storage.addBook(this.book);
-    }
   }
+  addMessage () {
+    var x = document.getElementById("bookmessage");
+    x.className = "show";
+    setTimeout(function() {x.className = x.className.replace("show","")}, 3000)
+  }
+}

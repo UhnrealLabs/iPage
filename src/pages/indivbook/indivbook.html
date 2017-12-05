@@ -4,7 +4,27 @@
         </ion-navbar>
       </ion-header>
       <ion-content>
-          <div class="book-info">
-              <b>{{book.volumeInfo.title}}</b>
-          </div>
+          <ion-list inset>
+                <div class="book-info">
+                        <b>{{book.volumeInfo.title}}</b>
+                </div>
+                <div>
+                        <button id="start">START</button>
+                        <input type="text" id="txt">
+                        <button id="stop">STOP</button>
+                </div>
+                <ion-item>
+                    <h1>Calculation Input: </h1>
+                        <ion-label>Seconds Per Page</ion-label>
+                        <ion-input type="number"[(ngModel)]="secondsPerPage"></ion-input>
+                </ion-item>
+                <ion-item>
+                        <ion-label>Total Days</ion-label>
+                        <ion-input type ="number"[(ngModel)]="totalDays"></ion-input>
+                </ion-item>
+                <button (click)="getInput()" (click)="getTimePerDay()" id="submit">SUBMIT</button>
+                <div>{{helperText}}</div>
+                <div>{{helperText2}}</div>
+                <div>{{helperText3}}</div>
+          </ion-list>
       </ion-content>
