@@ -23,8 +23,11 @@
                         <ion-input type ="number"[(ngModel)]="totalDays"></ion-input>
                 </ion-item>
                 <button (click)="getInput()" (click)="getTimePerDay()" id="submit">SUBMIT</button>
-                <div>{{helperText}}</div>
-                <div>{{helperText2}}</div>
-                <div>{{helperText3}}</div>
+                <div class="calculations">
+                        <div >{{helperText}}</div>
+                        <div>{{helperText2}}</div>
+                        <div>{{helperText3}}</div>
+                        <div>{{helperText4}}</div>
+                </div>
           </ion-list>
       </ion-content>

@@ -11,6 +11,7 @@ import { ShowWhen } from 'ionic-angular/components/show-hide-when/show-when';
 })
 export class AddBookPage {
   book = {};
+  books = [];
   constructor(public navCtrl: NavController, private nav: NavParams, private storage: StorageService) {
     this.book = this.nav.get('book_object');
   }

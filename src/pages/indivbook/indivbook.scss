@@ -112,7 +112,19 @@ time
             
         }   
 }
-#helperText 
-{
-    font-size: 36px;
-}
+.calculations {
+    text-align: center;
+    line-height: 2em;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0px 0px 10px rgb(217, 255, 0),
+                 0px 0px 20px rgb(222, 255, 37),
+                 0px 0px 30px rgb(255, 242, 127);
+    border: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: #000000;
+    text-align: left;
+    padding: 20px;
+  }
