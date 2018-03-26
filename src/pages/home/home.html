@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Today</ion-title>
+  <ion-navbar color="secondary">
+    <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+    <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">Today</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Today</h2>
+  <div class="heading">
+    <h5>Here you can track your reading.</h5>
+    <h6>Click a reminder to stop reading the book.</h6>
+    <p>Otherwise you will receive reminders here everyday to read your book.</p>
+  </div>
   <ion-list>
-      <ion-item>
-        <ion-label>Read __ Hours __ Minutes of (Insert Book Title)</ion-label>
-        <ion-checkbox color="medium" checked="true"></ion-checkbox>
-     </ion-item> 
-     <ion-item>
-        <ion-label>Read __ Hours __ Minutes of (Insert Other Book Title)</ion-label>
-        <ion-checkbox color="dark" checked="true"></ion-checkbox>
-     </ion-item> 
-      <h5> **When the item is checked, the item from the list 
-        should dissapear until the next morning.</h5>  
-    </ion-list> 
-</ion-content>
+      <ion-item-group>
+        <ion-item-divider color="light">To Read</ion-item-divider>
+          <ion-item (click)="addToFinishedBooks(book);getDateOfTermination()"*ngFor = "let book of currentBooks">Read {{book.volumeInfo.title}} for {{getTimeOfBook(book).hours}} hours, {{getTimeOfBook(book).minutes}} minutes, and {{getTimeOfBook(book).seconds}} seconds today!</ion-item>
+        <ion-item-divider color="light">All Done</ion-item-divider>
+          <ion-item *ngFor = "let book of finishedBooks">You finished reading {{book.volumeInfo.title}}</ion-item>
+      </ion-item-group>
+  </ion-list>

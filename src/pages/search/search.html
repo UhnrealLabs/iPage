@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-searchbar (ionInput)="inputSearch($event)"></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <h6>Search above for books to add to your library!</h6>
   <div class="image-gallery">
     <div *ngFor="let book of books" (tap)="openAddbookPage(book)" class="book">
-      <pre>{{book}}</pre>
       <img src="{{ (book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'http://via.placeholder.com/300x452') }}"/>
       <div class="book-footer">
           <b>{{book.volumeInfo.title}}</b>

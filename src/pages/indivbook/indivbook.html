@@ -1,33 +1,32 @@
 <ion-header>
-        <ion-navbar>
-          <ion-title>Indiv Page</ion-title>
+        <ion-navbar color="secondary">
+        <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+        <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">IndivBook</ion-title>
         </ion-navbar>
-      </ion-header>
-      <ion-content>
-          <ion-list inset>
-                <div class="book-info">
-                        <b>{{book.volumeInfo.title}}</b>
-                </div>
-                <div>
-                        <button id="start">START</button>
-                        <input type="text" id="txt">
-                        <button id="stop">STOP</button>
-                </div>
-                <ion-item>
-                    <h1>Calculation Input: </h1>
-                        <ion-label>Seconds Per Page</ion-label>
-                        <ion-input type="number"[(ngModel)]="secondsPerPage"></ion-input>
-                </ion-item>
-                <ion-item>
-                        <ion-label>Total Days</ion-label>
-                        <ion-input type ="number"[(ngModel)]="totalDays"></ion-input>
-                </ion-item>
-                <button (click)="getInput()" (click)="getTimePerDay()" id="submit">SUBMIT</button>
-                <div class="calculations">
-                        <div >{{helperText}}</div>
-                        <div>{{helperText2}}</div>
-                        <div>{{helperText3}}</div>
-                        <div>{{helperText4}}</div>
-                </div>
-          </ion-list>
-      </ion-content>
+</ion-header>
+<ion-content>
+        <ion-list inset>
+        <div class="book-info">
+                <h1 style="text-align:center;padding:15px">{{book.volumeInfo.title}}</h1>
+        </div>
+        <h6 style="text-align:center;">In how many seconds can you read one page?</h6>
+        <ion-item>
+                <ion-label>Seconds Per Page</ion-label>
+                <ion-input type="number"[(ngModel)]="secondsPerPage"></ion-input>
+        </ion-item>
+        <h6 style="text-align:center;">In how many days will you finish?</h6>
+        <ion-item>
+                <ion-label>Total Days</ion-label>
+                <ion-input type ="number"[(ngModel)]="totalDays"></ion-input>
+        </ion-item>
+        <button (tap)="getTimePerDay()" (tap)="showTimePerDay()" id="submit">SUBMIT</button>
+        <ion-card class="calculations" style="text-align: center;">
+                <div *ngIf="!hasClickedSubmit">How many pages should I read per day? How much time should I spend reading each day?</div>
+                <div *ngIf="hasClickedSubmit">At this pace: you would need to read {{pagesPerDay}} page(s) in {{hoursPerDay}} hour(s) {{minutesLeftPerDay}} minute(s) and {{secondsLeftPerDay}} second(s) each day to finish this book in {{totalDays}} days.</div>
+                <div style="text-align: center;"*ngIf="hasClickedSubmit && !canFinishBook">You cannot finish this book before your deadline.</div>
+                <div style="text-align: center;" *ngIf="hasClickedSubmit && canFinishBook">Get on reading!</div>
+        </ion-card>
+        <button (click)="sendReading();startReadingMessage()" id="startReading">START READING</button>
+        <div id="isReadingMessage">You have begun reading this book</div>
+        </ion-list>
+</ion-content>

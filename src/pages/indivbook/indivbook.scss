@@ -1,99 +1,11 @@
-body {
-    color: #DAD6D6;
-    background: #171A21;
-    display: flex;
-  }
-  // start button styling
-  #start {
-    flex-grow: 1;
-    margin: 10px auto;
-    text-align: center;
-    color: #DAD6D6;
-    background: rgb(92, 126, 75);
-    border:solid 2px rgb(76, 102, 63);
-    border-radius:5px;
-    box-shadow: 0 7px #999;   
-    padding:16px 40px 16px;
-    letter-spacing: 2px;
-    cursor:pointer;
-        //when hovering over button
-        &:hover {
-            background-color: rgb(65, 88, 54)
-        }
-        // when button is clicked
-        &:active {
-            margin-bottom: 0;
-            margin-top: 4px;
-            box-shadow: 0 5px #666;            
-            transform: translateY(4px);          
-            
-        }
-  }
-  // stop button styling
-  #stop {
-    flex-grow: 1;    
-    margin: 10px auto;
-    text-align: center;
-    color: #DAD6D6;
-    background: #941935;
-    border:solid 2px rgb(117, 19, 42);
-    border-radius:5px;
-    box-shadow: 0 7px #999; 
-    padding:16px 40px 16px;
-    letter-spacing: 2px;
-    cursor:pointer;
-        // when hovering over button 
-        &:hover {
-            background-color: rgb(117, 19, 42)
-        }
-        // when button is clicked
-        &:active {
-            margin-bottom: 0;
-            margin-top: 4px;
-            box-shadow: 0 5px #666;            
-            transform: translateY(4px); 
-        }
-  }
-  //reset button styling
-  #reset {
-    flex-grow: 1;
-    margin: 10px auto;
-    text-align: center;
-    color: #DAD6D6;
-    background: #d68111;
-    border:solid 2px #bd710e;
-    border-radius:5px;
-    box-shadow: 0 7px #999; 
-    padding:16px 40px 16px;
-    letter-spacing: 2px;
-    cursor:pointer;
-        // when hovering over button 
-        &:hover {
-            background-color: #bd710e
-        }
-        // when button is clicked
-        &:active {
-            margin-bottom: 0;
-            margin-top: 4px;
-            box-shadow: 0 5px #666;            
-            transform: translateY(4px);           
-        }
-    }
-// box in which seconds are counted
-time
-{
-    font-size: 100px;
-    text-decoration-color: black;
-    letter-spacing: 2px;
-}
 #submit
 {
+    display: block;
     flex-grow: 1;
     margin: 10px auto;
-    text-align: center;
-    color: #DAD6D6;
-    background: rgb(169, 58, 216);
-    border:solid 2px rgb(134, 46, 172);
+    color: rgb(255, 255, 255);
+    background: color($colors, tertiary);
+    border:solid 2px color($colors, secondary);
     border-radius:5px;
     box-shadow: 0 7px #999;   
     padding:16px 40px 16px;
@@ -101,7 +13,7 @@ time
     cursor:pointer;
         //when hovering over button
         &:hover {
-            background-color: rgb(134, 46, 172)
+            background-color:color($colors, secondary)
         }
         // when button is clicked
         &:active {
@@ -114,17 +26,83 @@ time
 }
 .calculations {
     text-align: center;
-    line-height: 2em;
-    color: white;
+    line-height: 3em;
+    color: color($colors, primary);
     font-size: 20px;
-    text-shadow: 0px 0px 10px rgb(217, 255, 0),
-                 0px 0px 20px rgb(222, 255, 37),
-                 0px 0px 30px rgb(255, 242, 127);
-    border: 1px solid gray;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    background-color: #000000;
-    text-align: left;
-    padding: 20px;
-  }
+    margin: 30px auto;
+    width: 80%;
+    background-color: color($colors, contrast);
+
+}
+#startReading
+{
+    display: block;
+    flex-grow: 1;
+    margin: 10px auto;
+    color: rgb(255, 255, 255);
+    background: color($colors, tertiary);
+    border:solid 2px color($colors, secondary);
+    border-radius:5px;
+    box-shadow: 0 7px #999;   
+    padding:16px 40px 16px;
+    letter-spacing: 2px;
+    cursor:pointer;
+        //when hovering over button
+        &:hover {
+            background-color:color($colors, secondary);
+        }
+        // when button is clicked
+        &:active {
+            margin-bottom: 20px;
+            margin-top: 4px;
+            box-shadow: 0 5px #666;            
+            transform: translateY(10px);         
+            
+        }     
+}
+#isReadingMessage {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 100px;
+    font-size: 17px;
+}
+
+#isReadingMessage.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 100px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 100px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 100px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 100px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 100px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

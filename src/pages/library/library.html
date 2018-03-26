@@ -1,10 +1,12 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Current Catalog</ion-title>
-  </ion-navbar>
+        <ion-navbar color="secondary">
+        <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+        <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">Library</ion-title>
+        </ion-navbar>
 </ion-header>
 
 <ion-content>
+    <h1>Search for Some Books to Add to your Library!</h1>
     <ion-list>
         <button ion-item *ngFor="let book of books" (tap) = "openIndivBookPage (book)">
             {{book.volumeInfo.title}}

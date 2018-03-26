@@ -1,12 +1,13 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Add Book</ion-title>
-  </ion-navbar>
-</ion-header>
+        <ion-navbar color="secondary">
+          <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+          <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">Addbook</ion-title>
+        </ion-navbar>
+      </ion-header>
 <ion-content>
     <div class="book-info">
-        <b>{{book.volumeInfo.title}}</b>
-        <p>{{book.volumeInfo.description}}</p>
+        <h1 style="text-align:center;padding:15px">{{book.volumeInfo.title}}</h1>
+        <p style="text-align:center;padding:15px"> {{book.volumeInfo.description}}</p>
         <div>
             <button ion-button round style="margin: 0 auto; display: block;" (tap)="addMessage ()" (tap) ="addBook ()">Add to Library</button> 
             <div id="bookmessage">This book has been added to your library</div>         

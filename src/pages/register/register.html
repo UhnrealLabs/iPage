@@ -1,0 +1,25 @@
+<ion-header>
+        <ion-navbar color="secondary">
+          <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+          <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">Create Account</ion-title>
+        </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+      <h1 class="heading">Hellooo</h1>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" #username></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" #password></ion-input>
+        </ion-item>
+        
+    </ion-list>
+      
+    <div padding>
+        <button block ion-button (click)="registerUser()" item-left>Register</button>
+    </div>
+</ion-content>

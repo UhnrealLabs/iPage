@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StorageService} from '../../_services/storage.service';
 import { IndivBookPage} from '../indivbook/indivbook';
@@ -7,20 +7,21 @@ import { IndivBookPage} from '../indivbook/indivbook';
   selector: 'page-about',
   templateUrl: 'library.html'
 })
-export class LibraryPage {
+export class LibraryPage implements OnInit {
 
   books = [];
 
+  constructor(public navCtrl: NavController, public storage: StorageService) {}
 
-
-  constructor(public navCtrl: NavController, public storage: StorageService) {
-    this.storage.getBooks().then((books) => {
-      this.books = books;
-    })
-  }
   openIndivBookPage (book) {
     this.navCtrl.push(IndivBookPage, {
     book_object: book }
   );
+  }
+
+  ngOnInit() {
+    this.storage.getBooks().then((books) => {
+      this.books = books;
+    })
   }
 }

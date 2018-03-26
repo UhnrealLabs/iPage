@@ -16,6 +16,8 @@ export class AddBookPage {
     this.book = this.nav.get('book_object');
   }
   addBook () {
+    let copyBook: any = this.book;
+    copyBook.isReading = false;
     this.storage.addBook(this.book);
   }
   addMessage () {

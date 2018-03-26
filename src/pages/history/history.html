@@ -1,0 +1,23 @@
+<ion-header>
+        <ion-navbar color="secondary">
+            <img style="display: inline-block; vertical-align: middle;" src="../../assets/imgs/iPagelogo3.png" height = "40" width = "40"/>
+            <ion-title style="display: inline-block; vertical-align: middle; margin: 12.75px">History</ion-title>
+        </ion-navbar>
+</ion-header>
+<ion-content>
+        <ion-list>
+                <ion-item-divider color="light">This Month</ion-item-divider>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                <ion-item *ngFor = "let book of finishedBooks">You finished reading book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                <ion-item-divider color="light">This Year</ion-item-divider>
+                        <ion-item *ngFor = "let book of finishedBooks">You finished reading book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                <ion-item-divider color="light">This Century</ion-item-divider>
+                        <ion-item *ngFor = "let book of finishedBooks">You finished reading book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+                        <ion-item>You finished book.volumeInfo.title on myDate</ion-item>
+        </ion-list>
+</ion-content>
